@@ -4,7 +4,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_RUNTIME_DIR=/run/user/$UID
 
-PROMPT='%1~ >'
+PROMPT='%~ >'
 
 export EDITOR=nvim
 export VISUAL=nvim
