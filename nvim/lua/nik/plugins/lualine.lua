@@ -6,6 +6,14 @@ end
 
 lualine.setup({
   options = {
-    theme = 'tokyonight',
+    theme = "tokyonight",
+  },
+  tabline = {
+    lualine_c = {
+      {
+        "filename",
+        path = 1,
+      },
+    },
   },
 })

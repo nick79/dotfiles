@@ -43,7 +43,7 @@ nvimtree.setup({
     dotfiles = false,
     custom = {},
   },
-  -- git = {
-  --   ignore = false,
-  -- },
+  git = {
+    ignore = false,
+  },
 })
