@@ -25,17 +25,20 @@ local on_attach = function(client, bufnr)
 
   -- set keybinds
   keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- go to declaration
-  keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts) -- go to definition
-  keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
-  keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts) -- see references
+  keymap.set("n", "gd", "<cmd>Telescope lsp_definitions<CR>", opts) -- go to definition
+  keymap.set("n", "gi", "<cmd>Telescope lsp_implementations<CR>", opts) -- go to implementation
+  keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts) -- see references
+  keymap.set("n", "gt", "<cmd>Telescope lsp_type_definitions<CR>", opts) -- go to implementation
   keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts) -- show documentation for what is under cursor
   keymap.set("n", "<leader>la", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts) --show code action
   keymap.set("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", opts) -- rename
   keymap.set("n", "<leader>ls", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts) -- signature help
   keymap.set("n", "<leader>ld", "<cmd>lua vim.diagnostic.open_float()<CR>", opts) -- show diagnostic
+  keymap.set("n", "<leader>lD", "<cmd>Telescope diagnostics bufnr=0<CR>", opts) -- show  diagnostics for file
   keymap.set("n", "<leader>lq", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts) -- diagnostic list
   keymap.set("n", "<leader>lj", "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>", opts)
   keymap.set("n", "<leader>lk", "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<CR>", opts)
+  keymap.set("n", "<leader>lf", "<cmd>lua vim.lsp.buf.format()<CR>", opts) -- format code
 end
 
 -- used to enable autocompletion (assign to every lsp server config)
