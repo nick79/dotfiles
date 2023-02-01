@@ -23,11 +23,6 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- make split windows equal width & height
 keymap.set("n", "<leader>sx", ":close<CR>") -- close current split window
 
-keymap.set("n", "<C-h>", "<C-w>h") -- move to left window
-keymap.set("n", "<C-l>", "<C-w>l") -- move to right window
-keymap.set("n", "<C-j>", "<C-w>j") -- move to down window
-keymap.set("n", "<C-k>", "<C-w>k") -- move to up window
-
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
 keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
