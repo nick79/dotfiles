@@ -1,4 +1,4 @@
---theme="base16-256"
+--theme=Nord
 --italic-text=always
 --style="numbers,changes"
 
