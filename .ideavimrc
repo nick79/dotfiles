@@ -1,0 +1,151 @@
+"" Common settings
+set clipboard += unnamed
+set clipboard += ideaput
+set scrolloff = 8
+set incsearch
+set number relativenumber
+set ideajoin
+set idearefactormode=keep
+set notimeout
+set smartcase
+set showcmd
+set showmode
+
+let mapleader = " "
+
+"" Set Handlers
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+sethandler <S-Tab> a:vim
+sethandler <C-I> a:vim
+sethandler <C-O> a:vim
+sethandler <C-C> a:ide
+sethandler <C-V> a:ide
+sethandler <C-A> a:ide
+sethandler <C-D> a:vim
+sethandler <C-H> a:vim
+sethandler <A-J> a:vim
+sethandler <C-N> a:vim
+sethandler <C-P> a:vim
+sethandler <C-Q> a:vim
+sethandler <C-T> a:vim
+sethandler <C-U> a:vim
+
+"" Presentation mode
+map <leader>z <Action>(TogglePresentationMode)
+
+"" Open terminal window
+map <leader>t <Action>(ActivateTerminalToolWindow)
+
+"" Window management
+map <leader>sv <Action>(SplitVertically)
+map <leader>sh <Action>(SplitHorizontally)
+map <leader>sx <Action>(Unsplit)
+
+map <c-h> <C-w>h
+map <c-j> <C-w>j
+map <c-k> <C-w>k
+map <c-l> <C-w>l
+
+map <Tab> <Action>(NextTab)
+map <S-Tab> <Action>(PreviousTab)
+
+map <leader>q <Action>(CloseContent)
+map <leader>Q <Action>(CloseAllEditors)
+map <leader>h <Action>(HideAllWindows)
+
+"" Keep visual selection
+vnoremap < <gv
+vnoremap > >gv
+
+"" Edit source code
+map <leader>zc <Action>(CollapseRegion)
+map <leader>zo <Action>(ExpandRegion)
+map <leader>r <Action>(Refactorings.QuickListPopupAction)
+map <leader>lf <Action>(ReformatCode)
+map <leader>lo <Action>(OptimizeImports)
+map <leader>la <Action>(ShowIntentionActions)
+
+"" Source code navigation
+map gd <Action>(GotoDeclaration)
+map gi <Action>(GotoImplementation)
+map gs <Action>(GotoSuperMethod)
+map gt <Action>(GotoTest)
+map gr <Action>(FindUsages)
+
+nmap <C-u> <C-u>zz
+nmap <C-d> <C-d>zz
+nmap n nzzzv
+nmap N Nzzzv
+
+"" File navigation
+nmap <C-o> <Action>(Back)
+nmap <C-i> <Action>(Forward)
+map <leader>ff <Action>(GotoFile)
+map <leader>fs <Action>(FindInPath)
+map <leader>fm <Action>(MainMenu)
+map <leader>fr <Action>(RecentFiles)
+map <leader>fp <Action>(ManageRecentProjects)
+map <leader>fh <Action>(CallHierarchy)
+map <leader>fd <Action>(FileStructurePopup)
+map <leader><leader> <Action>(SearchEverywhere)
+map / <Action>(Find)
+
+"" Navigate methods
+map <leader>mk <Action>(MethodUp)
+map <leader>mj <Action>(MethodDown)
+
+" Navigate project errors
+map <leader>ek <Action>(GotoPreviousError)
+map <leader>ej <Action>(GotoNextError)
+map <leader>eh <Action>(ShowErrorDescription)
+
+" Navigate git changes
+map <leader>go <Action>(ActivateCommitToolWindow)
+map <leader>gk <Action>(VcsShowPrevChangeMarker)
+map <leader>gj <Action>(VcsShowNextChangeMarker)
+
+"" Running and debugging
+map <leader>rs <Action>(ContextRun)
+map <leader>rc <Action>(RunClass)
+map <leader>rf <Action>(ChooseRunConfiguration)
+map <leader>dt <Action>(ToggleLineBreakpoint)
+map <leader>db <Action>(ViewBreakpoints)
+map <leader>ds <Action>(ContextDebug)
+map <leader>df <Action>(ChooseDebugConfiguration)
+
+"" Plugins
+set NERDTree
+map <leader>e :NERDTreeFocus<CR>
+" j/k -> up/down
+" q -> close
+" P -> jump to root node
+" o -> open file or folder
+" go -> open file but focus on the project pane
+" s -> open selected file in a new vertical split
+
+set surround
+" cs -> change the surroundings
+" ds -> delete the surroundings
+" ys ->  add surroundings ysiw" add "" around current word
+" S -> surround the currently selected text
+
+set textobj-indent
+" ii -> indent level
+" ai -> indent level plus one line above
+" aI -> indent level plus one line above and below
+
+set argtextobj
+let g:argtextobj_pairs="(:),{:},<:>,[:]"
+" aa -> around the parameter, daa (delete na argument)
+" ia -> The parameter only, cia (change an argument), via (select an argument)
+
+set textobj-entire
+" ae -> entire file with leading and trailing empty lines, vae(select all), dae (delete all)
+" ie -> parameter without leading and trailing blank lines
+
+set commentary
+" gcc -> comment current line
+" gc + motion -> comment using the motion gc2j, gcap, gcii
+" gc -> comment selected text
+
